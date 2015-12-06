@@ -186,7 +186,7 @@ public class ReadQuery
 					table += "</td>";
 					
 					table += "<td>";
-						table += "<a href=update?ID=" + String.valueOf(customer.getCustomerID()) + "> Update </a>" + "<a href=delete?episodeID=" + customer.getCustomerID() + "> Delete </a>";
+						table += "<a href=update?ID=" + String.valueOf(customer.getCustomerID()) + "> Update </a>" + "<a href=delete?ID=" + customer.getCustomerID() + "> Delete </a>";
 						
 					table += "</td>";
 				table += "</tr>";
