@@ -1,0 +1,193 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 29, 2015, 6:35:23 PM
+    Author     : Tanner
+*/
+
+body{
+    background-color: #D2B48C;
+}
+
+table.Main{
+    
+    margin:0 auto;
+    font-size: 12pt;
+    color:#FFFFFF;
+    background-color: #F08080;
+    border: thick solid black;
+    border-collapse: collapse;
+}
+
+tr, td{
+    border: thin solid black;
+}
+
+td.Headers{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #FFFF99;
+    color: #696969;
+}
+
+
+td.Centered{
+    text-align: center;
+}
+
+td.Title{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+td.Description{
+
+}
+div.addWrapper{
+    width: 60%;
+    border: thick solid black;
+    margin: 0 auto;
+}
+
+label.add{
+
+}
+
+form.add.label{
+    font-weight: bold;
+}
+
+.addWrapper
+{
+    background-color: #F08080;
+    border: solid 1px #a1a1a1;
+    padding: 10px;
+    padding-bottom: 70px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.addWrapper label, .addWrapper input
+{
+    display: block;
+    width: 40%;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.addWrapper input, .addWrapper input
+{
+    display: block;
+    width: 40%;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.addWrapper label
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+.update td{
+    border: none;
+    height:22px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.add td{
+    border: none;
+    height:22px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+input[readonly] {background-color: gray}
+
+
+
+.wrap{
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    border: 2px solid black;
+    margin-top: 25px;
+}
+
+.header{
+    background-color: tan;
+    text-align: left;
+    padding: 25px;
+}
+.headerImg{
+    float:left;
+    width: 370px;
+
+}
+.headerText{
+    float:left;
+    height: 105 px;
+    padding-top:50px;
+    padding-left:25px;
+    
+ 
+}
+
+.main{
+
+    text-align: left;
+    padding: 25px;
+}
+
+.footer{
+
+    text-align: left;
+    padding: 25px;
+}
+
+#navcontainer { margin-left: 30px; }
+
+/*Fat Erik's Pipelist*/
+/*http://css.maxdesign.com.au/listamatic/horizontal32.htm*/
+.navlist
+{
+    float:left;
+list-style: none;
+padding-left: 25px;
+padding-top: 10px;
+margin: 0;
+}
+
+.navlist li
+{
+display: inline;
+padding: 0;
+margin: 0;
+}
+
+.navlist li:before { content: "| "; }
+.navlist li:first-child:before { content: ""; }
+
+/*IE workaround*/
+/*All IE browsers*/
+* html #navlist li
+{
+border-left: 1px solid black;
+padding: 0 0.4em 0 0.4em;
+margin: 0 0.4em 0 -0.4em;
+}
+
+/*Win IE browsers - hide from Mac IE\*/
+* html #navlist { height: 1%; }
+
+* html #navlist li
+{
+display: block;
+float: left;
+}
