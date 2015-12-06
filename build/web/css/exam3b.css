@@ -68,14 +68,14 @@ form.add.label{
     border: solid 1px #a1a1a1;
     padding: 10px;
     padding-bottom: 70px;
-    width: 200px;
+
     margin: 0 auto;
 }
 
 .addWrapper label, .addWrapper input
 {
     display: block;
-    width: 40%;
+    
     float: left;
     margin-bottom: 10px;
 }
@@ -83,7 +83,6 @@ form.add.label{
 .addWrapper input, .addWrapper input
 {
     display: block;
-    width: 40%;
     float: left;
     margin-bottom: 10px;
 }
@@ -91,7 +90,14 @@ form.add.label{
 .addWrapper label
 {
     text-align: right;
+    width: 40%;
     padding-right: 10px;
+}
+
+.addWrapper input
+{
+    width: 60%;
+    padding-left: 10px;
 }
 
 .update td{

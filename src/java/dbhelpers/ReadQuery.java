@@ -69,7 +69,7 @@ public class ReadQuery
 	{
 		try
 		{
-			String query = "Select * from CUSTOMERS";
+			String query = "Select * from CUSTOMERS order by FIRSTNAME, LASTNAME ASC";
 
 			PreparedStatement ps = conn.prepareStatement(query);
 			this.results = ps.executeQuery();
