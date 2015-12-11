@@ -35,27 +35,27 @@
                             
                             <tr>
                                 <td class="right">First Name:</td>
-                                <td><input type="text" name="fName" value ="<%=String.valueOf(customer.getCustFName())%>" /></td>
+                                <td><input type="text" name="fName" value ="<%=String.valueOf(customer.getCustFName())%>" pattern="^[A-Za-z-\s.]{1,50}$" title="You failed!"/></td>
                             </tr>
 
                             <tr>
                                 <td class="right">Last Name:</td>
-                                <td><input type="text" name="lName" value ="<%=String.valueOf(customer.getCustLName())%>" /></td>
+                                <td><input type="text" name="lName" value ="<%=String.valueOf(customer.getCustLName())%>" pattern="^[A-Za-z-\s.]{1,50}$" title="You failed!"/></td>
                             </tr>
 
                             <tr>
                                 <td class="right">Address 1:</td>
-                                <td><input type="text" name="addr1" value ="<%=String.valueOf(customer.getCustAddr1())%>" /></td>
+                                <td><input type="text" name="addr1" value ="<%=String.valueOf(customer.getCustAddr1())%>" pattern="^[0-9A-Za-z\s.-]{1,50}$" title="You failed!"/></td>
                             </tr>
 
                             <tr>
                                 <td class="right">Address 2:</td>
-                                <td><input type="text" name="addr2" value ="<%=String.valueOf(customer.getCustAddr2())%>" /></td>
+                                <td><input type="text" name="addr2" value ="<%=String.valueOf(customer.getCustAddr2())%>" pattern="^[0-9A-Za-z\s.-]{1,50}$" title="You failed!"/></td>
                             </tr>
 
                             <tr>
                                 <td class="right">City:</td>
-                                <td><input type="text" name="city" value ="<%=String.valueOf(customer.getCustCity())%>" /></td>
+                                <td><input type="text" name="city" value ="<%=String.valueOf(customer.getCustCity())%>" pattern="^[A-Za-z-\s.]{1,50}$" title="You failed!"/></td>
                             </tr>
 
                             <tr>
@@ -65,17 +65,17 @@
 
                             <tr>
                                 <td class="right">ZIP:</td>
-                                <td><input type="text" name="zip" value ="<%=String.valueOf(customer.getCustZip())%>" /></td>
+                                <td><input type="text" name="zip" value ="<%=String.valueOf(customer.getCustZip())%>" pattern="^[0-9]{5}$" title="You failed!"/></td>
                             </tr>
 
                             <tr>
                                 <td class="right">Email Address:</td>
-                                <td><input type="text" name="emailAddr" value ="<%=String.valueOf(customer.getCustEmailAddr())%>" /></td>
+                                <td><input type="email" name="emailAddr" value ="<%=String.valueOf(customer.getCustEmailAddr())%>" title="You failed!"/></td>
                             </tr>
 
                             <tr>
                                 <td class="right">Age:</td>
-                                <td><input type="text" name="age" value ="<%=String.valueOf(customer.getCustAge())%>" /></td>
+                                <td><input type="text" name="age" value ="<%=String.valueOf(customer.getCustAge())%>" pattern="^[0-9]{1,3}$" title="You failed!"/></td>
                             </tr>
 
                             <tr>
