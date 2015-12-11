@@ -18,7 +18,8 @@
             <!--Header-->
             <%@include file="includes/header.jsp" %>
             <!--Menu-->
-            <%@include file="includes/menu.jsp" %>      
+            <%@include file="includes/menu.jsp" %>
+            <%@ include file="includes/searchbar.jsp" %>
 
             <div class="main">      <!--main div -->
                 <h3>  </h3>

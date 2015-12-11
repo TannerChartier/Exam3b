@@ -7,4 +7,6 @@
     </div>                      <!--Close Header Text div -->
 
     <br clear="all">
+    
+    
 </div>                                                              <!--close HEADER div-->

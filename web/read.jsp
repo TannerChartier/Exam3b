@@ -12,9 +12,9 @@
         <title>Tanner's Exam 3B</title>
         <link rel="stylesheet" type="text/css" href="css/exam3b.css" />
     </head>
-    
-    <% String table = (String) request.getAttribute("table"); %>
-    
+
+    <% String table = (String) request.getAttribute("table");%>
+
     <body>
         <div class="wrap">  <!--div to hold all the other divs -->    
 
@@ -22,7 +22,7 @@
             <%@include file="includes/header.jsp" %>
             <!--Menu-->
             <%@include file="includes/menu.jsp" %>      
-
+            <%@ include file="includes/searchbar.jsp" %>
             <div class="main">      <!--main div -->
                 <h3>  </h3>
                 <p>

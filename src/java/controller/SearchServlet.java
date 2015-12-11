@@ -5,7 +5,7 @@
  */
 package controller;
 
-import dbhelpers.AddQuery;
+import dbhelpers.SearchQuery;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -20,11 +20,11 @@ import model.Customers;
  *
  * @author Tanner
  */
-@WebServlet(name = "AddServlet", urlPatterns =
+@WebServlet(name = "SearchServlet", urlPatterns =
 {
-	"/addCustomer"
+	"/search"
 })
-public class AddServlet extends HttpServlet
+public class SearchServlet extends HttpServlet
 {
 
 	/**
@@ -46,10 +46,10 @@ public class AddServlet extends HttpServlet
 			out.println("<!DOCTYPE html>");
 			out.println("<html>");
 			out.println("<head>");
-			out.println("<title>Servlet AddServlet</title>");
+			out.println("<title>Servlet SearchServlet</title>");
 			out.println("</head>");
 			out.println("<body>");
-			out.println("<h1>Servlet AddServlet at " + request.getContextPath() + "</h1>");
+			out.println("<h1>Servlet SearchServlet at " + request.getContextPath() + "</h1>");
 			out.println("</body>");
 			out.println("</html>");
 		}
@@ -83,71 +83,21 @@ public class AddServlet extends HttpServlet
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException
 	{
-		//get the data from add.jsp
-		boolean isCustFName, isCustLName, isCustAddr1, isCustAddr2, isCustCity, isCustState, isCustZip, isCustEmailAddr, isCustAge;
+		//linked to Search.jsp
+		String searchVal = request.getParameter("searchVal");
 
-		String custFName = request.getParameter("fName");
-		String custLName = request.getParameter("lName");
-		String custAddr1 = request.getParameter("addr1");
-		String custAddr2 = request.getParameter("addr2");
-		String custCity = request.getParameter("city");
-		String custState = request.getParameter("state");
-		String custZip = request.getParameter("zip");
-		String custEmailAddr = request.getParameter("emailAddr");
-		String custAge = request.getParameter("age");
+		//create an SearchQuery object and use it to search the episode
+		SearchQuery sq = new SearchQuery();
+		
+		sq.doSearch(searchVal);
+		String table = sq.getHTMLTable();
 
-//		//this is where we could do error checking
-//		//verify alpha (up to 50)
-//		//custFName
-//		isCustFName = verifyAlpha(custFName);
-//		//custLName
-//		isCustLName = verifyAlpha(custLName);
-//		//custCity
-//		isCustCity = verifyAlpha(custCity);
-//
-//		//verify address (up to 50)
-//		//custAddr1
-//		isCustAddr1 = verifyAddress(custAddr1);
-//		//custAddr2
-//		isCustAddr2 = verifyAddress(custAddr2);
-//
-//		//verify zip
-//		//custZip
-//		isCustZip = verifyZip(custZip);
-//
-//		//verify email (up to 50)
-//		//custEmailAddr
-//		isCustEmailAddr = verifyEmail(custEmailAddr);
-//
-//		//verify age 
-//		//custAge
-//		isCustAge = verifyAge(custAge);
-//		//only if everything else matches up...
-//		//set up a customer object
-//
-//	
-			Customers customer = new Customers();
+		request.setAttribute("table", table);
+		//pass control onto read servlett
+		String url = "/read.jsp";
 
-			customer.setCustFName(custFName);
-			customer.setCustLName(custLName);
-			customer.setCustAddr1(custAddr1);
-			customer.setCustAddr2(custAddr2);
-			customer.setCustCity(custCity);
-			customer.setCustState(custState);
-			customer.setCustZip(custZip);
-			customer.setCustEmailAddr(custEmailAddr);
-			customer.setCustAge(Integer.parseInt(custAge));
-			//set up an addQuery object
-			AddQuery aq = new AddQuery();
-
-			//psas the customer object to addQuery object to add it to the database
-			aq.doAdd(customer);
-
-			//pass execution control to the ReadServlet
-			String url = "/read";
-
-			RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-			dispatcher.forward(request, response);
+		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+		dispatcher.forward(request, response);
 	}
 
 	/**
